@@ -2,6 +2,8 @@ import socket
 from pathlib import Path
 from utils import extract_route, read_file, build_response, load_template
 from views import index
+from database import Database
+
 
 def requisicao_faltando_corpo(requisicao):
     #Trecho de código similar ao feito na função index
@@ -21,6 +23,10 @@ def requisicao_faltando_corpo(requisicao):
 CUR_DIR = Path(__file__).parent
 SERVER_HOST = '0.0.0.0'
 SERVER_PORT = 8080
+
+db = Database('banco')
+
+db.get_all()
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)

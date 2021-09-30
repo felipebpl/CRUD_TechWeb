@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Get-it</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="../img/logo-getit.png"/>
     <link
       rel="stylesheet"
@@ -26,20 +27,25 @@
     </div>
 
     <main class="container">
-      <form class="form-card" method="POST" autocomplete="off">
+
+      <form class="form-card" method="post" id="form-container">
+        <input type="hidden" name="action" value="create" />
         <input
+          required
           class="form-card-title"
           type="text"
-          name="titulo"
+          name="title"
           placeholder="Título"
         />
         <textarea
+          required
           class="autoresize"
-          name="detalhes"
+          name="content"
           placeholder="Digite o conteúdo..."
         ></textarea>
         <button class="btn" type="submit">Criar</button>
       </form>
+      
 
       <div class="card-container">
         {notes}

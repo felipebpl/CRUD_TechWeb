@@ -1,35 +1,21 @@
 <div class="card">
-  <h3 class="card-title">{title}</h3>
-  <div class="card-content">
-    <p>{details}</p>
-  </div>
-</div>
 
-<!-- <li class="card" key="{id}">
   <form method="post">
-    <button class="card-update-button" type="submit" id="{id}">
-      <i class="fa fa-save"></i>
-    </button>
-    <input type="hidden" name="method" value="UPDATE" />
-    <input type="hidden" name="id" value="{id}" />
-    <input
-      value="{title}"
-      name="title"
-      class="card-title inputcard"
-      key="{id}"
-    />
-    <textarea
-      value="{content}"
-      name="content"
-      class="card-content inputcard"
-      key="{id}"
-    >
-{content}</textarea
-    >
+    <input type="hidden" name="action" value="update" />
+    <input type="hidden" name="id" id="hiddenField" value="{id}" />
+    <div class="title-update-form"> 
+      <textarea class="card-title" name="new_title">{title}</textarea>
+      <button class="update-btn" type="submit" ><i class="fa fa-save"></i></button>
+    </div>
+    <textarea class="card-content" name="new_content">{details}</textarea>
   </form>
-  <form class="card-delete" method="post">
-    <input type="hidden" name="method" value="DELETE" />
-    <input type="hidden" name="id" value="{id}" />
-    <button type="submit"><i class="fa fa-trash"></i></button>
-  </form>
-</li> -->
+
+  <form method="post">
+    <input type="hidden" name="action" value="delete" />
+    <input type="hidden" name="id" id="hiddenField" value="{id}" />
+    <button class="delete-btn" type="submit"><i class="fa fa-trash"></i></button>
+  </form> 
+
+  
+
+</div>
