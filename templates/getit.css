@@ -209,3 +209,27 @@ img {
   flex-direction: row;
   max-height: 30px;
 }
+
+.ex1-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 18%;
+}
+
+.ex1{
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+
+
+.ex1 text{
+  font-weight: bolder;
+  text-align: center;
+}
+
+.ex1 img{
+  align-self: center;
+}

@@ -58,6 +58,9 @@ while True:
             response = build_response() + read_file(filepath)
         elif route == '':
             response = index(request)
+        elif route == 'tecweb':
+            response = build_response(load_template('tecweb.html'))
+
         else:
             response = build_response(load_template('404.html'))
 
