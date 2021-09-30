@@ -1,0 +1,214 @@
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: whitesmoke;
+}
+img { 
+  width: 75px;
+  margin: 8px; 
+}
+
+.appbar {
+  background-color: #f7d736;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0.5px 0.5px 5px 5px gray;
+}
+
+.subtitle { 
+  margin-top: 22px;
+}
+
+.container {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ margin-top: 30px;
+}
+
+.form-card {
+  margin-top: 25px;
+  display: flex;
+  align-self:center;
+  justify-self: center;
+  flex-direction: column;
+  width: 450px;
+  height: 115px;
+  background-color: white;
+  padding: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+
+.form-card-title{
+    border: 0;
+    font-size: 20px;
+}
+
+.autoresize{
+  border: 0;
+  margin-top: 11px;
+  font-size: 14px;
+}
+
+.card-container{
+  display: flex;
+  margin-top: 35px;
+  justify-content: space-around;
+  flex-wrap: wrap;  
+  margin-left: 55px;
+  margin-right: 55px;
+}
+
+.card{ 
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-right: 15px;
+  margin-left: 15px;
+  border: 5px black; 
+  border-width: 10px;
+  border-radius: 5px;
+  width: 220px;
+  height: 125px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.card-color-5{
+  background-color: rgb(137, 212, 134);
+}
+
+.card-color-4{
+  background-color: rgb(224, 131, 201);
+}
+
+.card-color-3{
+    background-color: rgb(144, 214, 238);
+}
+
+.card-color-2{
+  background-color: rgb(241, 188, 144);
+}
+
+.card-color-1{
+  background-color: rgb(240, 231, 108);
+}
+
+.card-rotation-11{
+  transform: rotate(3.5deg)
+  
+}
+
+.card-rotation-10{
+  transform: rotate(-2.5deg)
+  
+}
+
+.card-rotation-9{
+  transform: rotate(3deg)
+}
+
+.card-rotation-8{
+  transform: rotate(-4deg)
+}
+
+.card-rotation-7{
+  transform: rotate(-2deg)
+}
+
+.card-rotation-6{
+  transform: rotate(-3.5deg)
+}
+
+.card-rotation-5{
+ transform: rotate(3deg)
+}
+
+.card-rotation-4{
+ transform: rotate(4.5deg)
+}
+
+.card-rotation-3{
+ transform: rotate(-1deg)
+}
+
+.card-rotation-2{
+ transform: rotate(-3deg)
+}
+
+.card-rotation-1{
+ transform: rotate(4deg)
+}
+
+.card-title{
+  font-weight: bolder;
+  overflow-wrap: break-word;
+  font-family: 'Permanent Marker', cursive;
+  margin: 5px;
+}
+
+.card-content{
+  font-family: 'Permanent Marker', cursive;
+  overflow-wrap: break-word;
+  color: rgb(94, 92, 92);
+  margin: 5px;
+  text-align: center;
+}
+
+.btn {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+
+  background-color: #f7d736;
+
+  transition: background-color 0.3s;
+}
+
+.btn > * {
+  position: relative;
+}
+
+.btn:before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 0;
+  padding-top: 0;
+
+  border-radius: 100%;
+
+  background-color: rgba(236, 240, 241, 0.3);
+
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+
+  transition: width 0.2s ease-out, padding-top 0.2s ease-out;
+}
+
+.card button, .card input, .card textarea {
+ background: none;
+ outline: none;
+ border: 0;
+ resize: none;
+}

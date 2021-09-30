@@ -17,14 +17,16 @@ def extract_route(request):
 
 # print(extract_route(request_test))
 
-
-def read_file(filepath):
-    if filepath.suffix in ['.txt', '.html', '.css', '.js']:
-        mode = 'r'
+def read_file(path):
+    str_path = str(path)
+    if str_path.split(".") in ["txt", "html", "css", "js"]:
+        with open(path, "r") as file:
+            conteudo = file.read()
     else:
-        mode = 'rb'
-    with open(filepath, mode=mode) as f:
-        return f.read()
+        with open(path, "rb") as file:
+            conteudo = file.read()
+
+    return conteudo
 
 # print(read_file(Path("img/logo-getit.png")))
 
@@ -48,10 +50,10 @@ def add_notes(data):
 
 
 def build_response(body='', code=200, reason='OK', headers=''):
-    defaultResponse = "HTTP/1.1 " + str(code) + " " + reason
+    response = "HTTP/1.1 " + str(code) + " " + reason
     if headers != '':
-        defaultResponse += f"\n{headers}"
-    defaultResponse += f"\n\n{body}"
-    return (defaultResponse).encode()
+        response += f"\n{headers}"
+    response += f"\n\n{body}"
+    return (response).encode()
 
 
