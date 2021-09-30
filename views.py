@@ -2,8 +2,6 @@ from os import error, replace
 from utils import  load_data, load_template, add_notes, build_response
 from urllib.parse import unquote_plus
 
-
-
 def index(request):
     # A string de request sempre começa com o tipo da requisição (ex: GET, POST)
     if request.startswith('POST'):
@@ -27,6 +25,7 @@ def index(request):
         response = build_response(code=303, reason='See Other', headers='Location: /')
         return response
 
+    
     note_template = load_template('components/note.html')
     notes_li = [
         note_template.format(title=dados['titulo'], details=dados['detalhes'])

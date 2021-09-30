@@ -1,6 +1,6 @@
 import socket
 from pathlib import Path
-from utils import extract_route, read_file, build_response
+from utils import extract_route, read_file, build_response, load_template
 from views import index
 
 def requisicao_faltando_corpo(requisicao):
@@ -53,7 +53,7 @@ while True:
         elif route == '':
             response = index(request)
         else:
-            response = build_response()
+            response = build_response(load_template('404.html'))
 
         client_connection.sendall(response)
 
