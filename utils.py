@@ -48,11 +48,10 @@ def add_notes(data):
 
 
 def build_response(body='', code=200, reason='OK', headers=''):
-    #'HTTP/1.1 200 OK\n\n'.encode() + response)
-    if headers:
-        headers=f"\n{headers}"
-    response = f"HTTP/1.1 {code} {reason}{headers}\n\n{body}".encode()
-    return response
-# print(build_response())
+    defaultResponse = "HTTP/1.1 " + str(code) + " " + reason
+    if headers != '':
+        defaultResponse += f"\n{headers}"
+    defaultResponse += f"\n\n{body}"
+    return (defaultResponse).encode()
 
 

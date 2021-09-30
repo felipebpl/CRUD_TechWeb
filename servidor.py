@@ -1,6 +1,6 @@
 import socket
 from pathlib import Path
-from utils import extract_route, read_file
+from utils import extract_route, read_file, build_response
 from views import index
 
 def requisicao_faltando_corpo(requisicao):
@@ -49,13 +49,13 @@ while True:
 
         filepath = CUR_DIR / route
         if filepath.is_file():
-            response = read_file(filepath)
+            response = build_response() + read_file(filepath)
         elif route == '':
             response = index(request)
         else:
-            response = bytes()
+            response = build_response()
 
-        client_connection.sendall('HTTP/1.1 200 OK\n\n'.encode() + response)
+        client_connection.sendall(response)
 
     client_connection.close()
 

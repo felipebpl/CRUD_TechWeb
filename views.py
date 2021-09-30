@@ -1,5 +1,5 @@
 from os import error, replace
-from utils import  load_data, load_template,  add_notes, build_response
+from utils import  load_data, load_template, add_notes, build_response
 from urllib.parse import unquote_plus
 
 
@@ -22,7 +22,11 @@ def index(request):
                 params["titulo"] = unquote_plus(chave_valor[chave_valor.find("=")+1:], encoding="utf-8", errors="replace")
             if chave_valor.startswith("detalhes"):
                 params["detalhes"] = unquote_plus(chave_valor[chave_valor.find("=")+1:], encoding="utf-8", errors="replace")
-                
+        add_notes(params)
+
+        response = build_response(code=303, reason='See Other', headers='Location: /')
+        return response
+
     note_template = load_template('components/note.html')
     notes_li = [
         note_template.format(title=dados['titulo'], details=dados['detalhes'])
@@ -30,9 +34,7 @@ def index(request):
     ]
     notes = '\n'.join(notes_li)
 
-    return load_template('index.html').format(notes=notes).encode()
-
-    # O RESTO DO CÓDIGO DA FUNÇÃO index CONTINUA DAQUI PARA BAIXO...
+    return build_response(load_template('index.html').format(notes=notes))
 
 
 
